@@ -12,12 +12,13 @@ document.getElementById("withdraw-btn").addEventListener("click", function () {
   const cashOutAmount = getValueFromInput("cashOut-amount");
 
   // 3. get the current balance, validate, convert to number
-  const balanceElement = document.getElementById("balance");
-  const balance = balanceElement.innerText;
-  console.log(balance);
+  //   const balanceElement = document.getElementById("balance");
+  //   const balance = balanceElement.innerText;
+  //   console.log(balance);
 
   // 4. calculate new balance
-  const newBalance = Number(balance) - Number(cashOutAmount);
+  const currentBalance = getBalance();
+  const newBalance = currentBalance - Number(cashOutAmount);
   if (newBalance < 0) {
     alert("Withdraw amount can't be greater than current balance!!");
     return;
@@ -28,7 +29,7 @@ document.getElementById("withdraw-btn").addEventListener("click", function () {
   if (cashOutPin === "1234") {
     alert("Cash Out Successful");
     console.log("New Balance", newBalance);
-    balanceElement.innerText = newBalance;
+    setBalance(newBalance);
   } else {
     alert("Invalid PIN!!");
     return;

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Payoo | Login</title>
+    <title>Payoo | Home</title>
     <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
 
     <!-- Tailwind CSS -->
@@ -46,7 +46,9 @@
   </head>
 
   <body class="min-h-screen mx-auto max-w-md bg-base-200">
-    <header class="border-b-2 py-5 border-gray-300 sticky top-0 z-10 bg-base-200">
+    <header
+      class="border-b-2 py-5 border-gray-300 sticky top-0 z-10 bg-base-200"
+    >
       <section class="w-11/12 mx-auto flex justify-between items-center">
         <div class="left flex gap-1">
           <div class="logo w-15">
@@ -116,13 +118,69 @@
       </div>
     </section>
 
+    <!-- Add Money -->
+    <section class="add-money w-11/12 mx-auto py-10">
+      <h2 class="font-bold text-lg py-4">Add Money</h2>
+      <div class="add-money-form">
+        <div class="card bg-base-100 w-full shadow-xs mx-auto rounded-2xl">
+          <div class="card-body">
+            <fieldset class="fieldset">
+              <label class="label text-neutral font-bold">Select a Bank</label>
+              <select class="select rounded-full bg-base-200 w-full">
+                <option disabled selected>Select a Bank</option>
+                <option value="DBBL">DBBL</option>
+                <option value="IBBL">IBBL</option>
+                <option value="UCBL">UCBL</option>
+              </select>
+              <br />
+              <label class="label text-neutral font-bold"
+                >Bank Account Number</label
+              >
+              <input
+                id="add-money-number"
+                maxlength="11"
+                minlength="11"
+                type="text"
+                class="input rounded-full bg-base-200 w-full"
+                placeholder="Enter Bank's 11 digit Number"
+              />
+              <br />
+              <label class="label text-neutral font-bold">Amount to Add</label>
+              <input
+                id="add-money-amount"
+                type="number"
+                class="input rounded-full bg-base-200 w-full"
+                placeholder="Add Amount to withdraw"
+              />
+              <br />
+              <label class="label text-neutral font-bold">Pin Number</label>
+              <input
+                id="add-money-pin"
+                maxlength="4"
+                minlength="4"
+                type="password"
+                class="input rounded-full bg-base-200 w-full"
+                placeholder="Enter 4 digit pin number"
+              />
+              <button
+                id="add-money-btn"
+                class="btn btn-primary rounded-full mt-4"
+              >
+                Add Money
+              </button>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+
+      <script src="./scripts/machine.js"></script>
+    </section>
+
     <!-- Cash Out  Form -->
-    <section class="cashOut w-11/12 mx-auto py-10">
-        <h2 class="font-bold text-lg py-4">Cash Out</h2>
+    <section class="cashOut w-11/12 mx-auto py-10 hidden">
+      <h2 class="font-bold text-lg py-4">Cash Out</h2>
       <div class="form">
-        <div
-          class="card bg-base-100 w-full max-w-sm shrink-0 shadow-xs mx-auto rounded-2xl"
-        >
+        <div class="card bg-base-100 w-full shadow-xs mx-auto rounded-2xl">
           <div class="card-body">
             <fieldset class="fieldset">
               <label class="label text-neutral font-bold">Agent Number</label>
@@ -135,7 +193,6 @@
                 placeholder="Enter Agent's 11 digit Number"
               />
               <br />
-            <fieldset class="fieldset">
               <label class="label text-neutral font-bold">Amount in BDT</label>
               <input
                 id="cashOut-amount"
@@ -153,7 +210,10 @@
                 class="input rounded-full bg-base-200 w-full"
                 placeholder="Enter 4 Digit PIN"
               />
-              <button id="withdraw-btn" class="btn btn-primary rounded-full mt-4">
+              <button
+                id="withdraw-btn"
+                class="btn btn-primary rounded-full mt-4"
+              >
                 Withdraw Money
               </button>
             </fieldset>
