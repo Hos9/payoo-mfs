@@ -80,12 +80,14 @@
       </div>
       <div class="buttons grid grid-cols-3 gap-3 pt-6">
         <button
+          onclick="showOnly('add-money')"
           class="btn btn-primary btn-soft py-4 border-1 border-gray-300 rounded-md flex-col h-full"
         >
           <img class="" src="./assets/opt-1.png" alt="" />
           <p>Add Money</p>
         </button>
         <button
+          onclick="showOnly('cashOut')"
           class="btn btn-primary btn-soft py-4 border-1 border-gray-300 rounded-md flex-col h-full"
         >
           <img class="" src="./assets/opt-2.png" alt="" />
@@ -119,7 +121,7 @@
     </section>
 
     <!-- Add Money -->
-    <section class="add-money w-11/12 mx-auto py-10">
+    <section id="add-money" class="add-money w-11/12 mx-auto py-10">
       <h2 class="font-bold text-lg py-4">Add Money</h2>
       <div class="add-money-form">
         <div class="card bg-base-100 w-full shadow-xs mx-auto rounded-2xl">
@@ -178,7 +180,7 @@
     </section>
 
     <!-- Cash Out  Form -->
-    <section class="cashOut w-11/12 mx-auto py-10 hidden">
+    <section id="cashOut" class="cashOut w-11/12 mx-auto py-10 hidden">
       <h2 class="font-bold text-lg py-4">Cash Out</h2>
       <div class="form">
         <div class="card bg-base-100 w-full shadow-xs mx-auto rounded-2xl">
